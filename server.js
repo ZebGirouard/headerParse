@@ -11,7 +11,6 @@ var app = express();
 
 require('dotenv').load();
 
-console.log(process.env);
 var mongoURI = process.env.MONGOLAB_URI || process.env.MONGO_URI;
 
 mongoose.connect(mongoURI);

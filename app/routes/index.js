@@ -1,10 +1,10 @@
 'use strict';
 
-var TimestampHandler = require(process.cwd() + '/app/controllers/timestampHandler.server.js');
+var HeaderParseHandler = require(process.cwd() + '/app/controllers/headerParseHandler.server.js');
 
 module.exports = function (app, db) {
   
-  var timestampHandler = new TimestampHandler(db);
+  var headerParseHandler = new HeaderParseHandler(db);
   
   app.route('/')
     .get(function (req, res) {
@@ -12,6 +12,6 @@ module.exports = function (app, db) {
       console.log("Getting homepage...");
     });
     
-  app.route('/:dateTime')
-    .get(timestampHandler.getTimestamp);
+  app.route('/api/whoami')
+    .get(headerParseHandler.getTimestamp);
 };

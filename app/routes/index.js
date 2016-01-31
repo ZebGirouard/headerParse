@@ -13,5 +13,5 @@ module.exports = function (app, db) {
     });
     
   app.route('/api/whoami')
-    .get(headerParseHandler.getTimestamp);
+    .get(headerParseHandler.getHeader);
 };

@@ -2,7 +2,7 @@
 
 function HeaderParseHandler () {
 	
-	this.getTimestamp = function (req, res) {
+	this.getHeader = function (req, res) {
 		var ipaddress = req.headers['x-forwarded-for'];
 		var langRegEx = /(.+?)\,/;
 		var language = req.headers['accept-language'].match(langRegEx)[1];
